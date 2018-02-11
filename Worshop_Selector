@@ -1,0 +1,101 @@
+public partial class WorshopSelector : Form
+{
+public WorshopSelector()
+{
+InitializeComponent();
+}
+
+private void Showbutton_Click(object sender, EventArgs e)
+{
+// Local variables.
+decimal registerationfees = 0m; // to hold Wrokshop.
+decimal days = 0m;	//to hold the numer of day for the workshop. decimal lodingfees = 0m;	// to hold the location or city .
+
+ 
+
+
+-1) ;
+ 
+// Determine the workshop and the duration .
+if (WorkShoplistBox1.SelectedIndex != -1 && LocationlistBox2.SelectedIndex !=
+
+{
+switch (WorkShoplistBox1.SelectedIndex)
+{
+ 
+case 0:
+registerationfees = 1000;
+days = 3; break;
+case 1:
+registerationfees = 800;
+days = 3; break;
+case 2:
+registerationfees = 1500;
+days = 3; break;
+case 3:
+registerationfees = 1300;
+days = 5; break;
+case 4:
+registerationfees = 500;
+days = 1; break;
+}
+//Determine the lodging of the workshop. if (LocationlistBox2.SelectedIndex != -1)
+{
+switch (LocationlistBox2.SelectedIndex)
+{
+case 0:
+lodingfees = 150; break;
+case 1:
+lodingfees = 225; break;
+case 2:
+lodingfees = 175; break;
+case 3:
+lodingfees = 300; break;
+case 4:
+lodingfees = 175; break;
+case 5:
+lodingfees = 150; break;
+}
+}
+//The user does not select workshop the loocation. else
+{
+MessageBox.Show("you have not slected workshop the location");
+}
+
+ 
+
+
+Registerionfee
+ 
+//Dispaly the Cost
+RegistrationFeeslabel4.Text = registerationfees.ToString("C"); // to the
+
+lodgingFeeslabel6.Text = lodingfees.ToString("C");	// to the
+ 
+lodingfees per day
+totallabel.Text = (registerationfees + (lodingfees * days)).ToString("c"); //to the overall
+dayslabel5.Text = days.ToString(); //to dispaly the duration
+}
+//The user does not select workshop the loocation if (WorkShoplistBox1.SelectedIndex == -1)
+{
+RegistrationFeeslabel4.Text = ""; lodgingFeeslabel6.Text = ""; dayslabel5.Text = ""; totallabel.Text = "";
+}
+if (LocationlistBox2.SelectedIndex == -1)
+{
+RegistrationFeeslabel4.Text = ""; lodgingFeeslabel6.Text = ""; dayslabel5.Text = ""; totallabel.Text = "";
+}
+}
+
+private void Clearbutton_Click(object sender, EventArgs e)
+{
+//Clear the workshop WorkShoplistBox1.ClearSelected(); LocationlistBox2.ClearSelected();
+
+RegistrationFeeslabel4.Text = ""; lodgingFeeslabel6.Text = ""; totallabel.Text = ""; dayslabel5.Text = "";
+}
+
+private void Exitbutton_Click(object sender, EventArgs e)
+{
+//Close the form. this.Close();
+}
+}
+}
